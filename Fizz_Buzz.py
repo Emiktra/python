@@ -49,7 +49,7 @@ def calculate(start, finish):
 while True:
     startPoint = 0
     finishPoint = 100
-    change = str(input('[Default is 0-100]\nchange starting and end point?(y/n)\t\t\t\t\t\t\t\tQuit?(q)\n'))
+    change = str(input('[Default is 0-100]\nchange starting and end point?(y/n)\t\t\t\t\t\t\t\tQuit?(q)\n')).lower()
     if change == 'y': 
         changeValue()
         time.sleep(0.5)
