@@ -5,4 +5,3 @@ HDR = True
 resolution = 1920*1280
 audio = 76
 mouse sensivity = 2.3
-asdasd = adasd
