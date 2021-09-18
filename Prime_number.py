@@ -1,15 +1,12 @@
 import time
 
 def alibaba(PrimeNumber):
-    yess = False
     for i in range(2, PrimeNumber):
         xx = PrimeNumber / i
-        xxx = xx.is_integer()
-        if xxx == True:
+        if xx.is_integer():
             print(f'{PrimeNumber} is not a prime number\n')
-            yess = True
             break
-    if yess == False:
+    if not xx.is_integer():
         print(f'{PrimeNumber} is a prime number\n')
 
 while True:
