@@ -1,0 +1,88 @@
+C9131 Raymond Reddington
+F3758 Sezgin
+F3777 Osan Kara
+F3778 Mehmet Enfa
+F3793 Kerem
+F3794 Michael
+F3796 Osman
+F3798 Zübeyir
+F3804 MUSTAFA CAN
+F3805 Mücahid
+F3776 İlk Name 
+
+Sizede merhaba hocam,
+
+Burda güzel düsünmüssünüz, ama sanirsam soruyu yanlis anlamis olasiniz ki, cevabiniz pek dogru degil.
+
+"Eger bir crypto marketine yatirdiginiz para her gün 7% artiyorsa yatirdiginiz 1000$ 7 gün sonra ne kadar artmistir?"
+
+
+
+Burda her gün 7% artan parayi tekrardan 7% arttiriyoruz. Ve bu durumda bir for loop'u kullanabiliriz.
+
+
+
+Öncelikle sizin cevabiniza bakalim. Sizin icin kodu calisir hale getirdim:
+
+   money = 1000
+   oran = 0.07
+   kar = money*oran
+   gün = 7
+   kazanc = money + kar * gün
+   print(kazanc)
+
+Sonuc tahmin ettiginiz gibi 1490 ciksada gercekte sonuc bundan yüksek olmali, cünkü para hergün 70$ artmiyor.
+
+bunun iki cözümü var. Birincisi bir for loop kullanma
+
+   money = 1000
+   oran = 0.07
+   gün = 7
+
+   for i in range(gün):
+     money = money + money * oran
+
+   print(money)
+
+Burda 7 kez paramizi oran ile carpimiyla arttiriyoruz.
+yani ilk gün paramiz 1000 + 1000 * 0.07 = 1070
+ikinci gün 1070 + 1070 * 0.07 = 1144,9‬
+ücüncü gün 1.144,9‬ + 1.144,9‬ * 0.07 = 1.225,043
+...
+
+
+böylelikle yedinci günün sonunda 1605.78$ 'imiz oluyor
+
+ikinci cözüm ise güc kullanmak: 27²
+
+burda artis oranini parayi borsada sakliyacagimiz günle katlarsak, o zaman 7.'ci günün sonunda paranin kac kat artcagini gorucez
+Python'da güc kullanmak icin iki asterisk kullaniyoruz ** 
+  
+oran = 0.07
+gün = 7
+
+   toplam_oran = (1 + oran) ** gün
+
+sonuc 1.60578'a yakin bir sayidir
+
+ve farkettiyseniz bu sayiyi paramizla carparsak sonucu elde etmis oluyorz
+
+   money = 1000
+   toplam_oran = 1.60578
+   print(money * toplam_oran)
+
+Sonuc 1605.78 cikar. kod hali:
+
+   money = 1000
+   oran = 0.07
+   gün = 7
+
+   kazanc_oran = 1.07 ** 7
+
+   print(money * kazanc_oran)
+
+
+
+Ayrica lütfen variable'lara ingilizce isim vermeye alisalim. Ileride isinize yarar.
+Bir sorun olursa bana slack'den yazabilirsin.
+- Sami Mentör
